@@ -1,8 +1,24 @@
 
 # PyRadiomics Pipeline
 
-A fully automated pipeline for radiomics feature extraction, selection, classification, and analysis.  
-This framework supports batch processing of medical images and structured patient information, designed for reproducible radiomics research.
+### 🔬 **PyRadiomics Pipeline**
+
+A fully automated pipeline for **radiomics feature extraction**, **selection**, **classification**, and **analysis**.  
+This framework supports batch processing of medical images and structured patient metadata, and is designed for reproducible and scalable radiomics research.
+
+
+
+**Radiomics** is a quantitative imaging analysis approach that extract high-dimensional, hand-crafted features from medical images that capture **tissue heterogeneity**, **shape**, **intensity**, and **texture**. Then use **machine learning models** or deep learning method for tasks such as **classification**, **regression**, and **risk stratification**  to support clinical decision-making.
+
+---
+
+**Key Components:**  
+- **Image pre-processing** and **segmentation handling**  
+- **Feature extraction** using IBSI-compliant algorithms  
+- **Feature selection** and **dimensionality reduction**  
+- **Model training and evaluation** (e.g., SVM, Random Forest, XGBoost)  
+- **Integrated visualization** and **statistical analysis tools**
+
 
 ## 🧠 Features
 - Preprocessing of image and patient-level data  

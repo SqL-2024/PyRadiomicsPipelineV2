@@ -147,7 +147,7 @@ For more detailed explanations of each parameter and additional options, refer t
 ```
 
 ## 📚 Citation
-If you use this pipeline in your research, please cite any of the following works that were developed using this tool.:
+If you use this tool in your work, please cite any of the following papers that were developed based on this tool:
 
 1. Du J, He X, Fan R, Zhang Y, Liu H, Liu H, **Liu S**, Li S.  
    *Artificial intelligence-assisted precise preoperative prediction of lateral cervical lymph nodes metastasis in papillary thyroid carcinoma via a clinical-CT radiomic combined model.*  

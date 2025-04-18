@@ -33,8 +33,8 @@ This framework supports batch processing of medical images and structured patien
 To install the pipeline, follow these steps:
 
 ```bash
-git clone https://github.com/SqL-2024/pyradiomics-pipeline.git
-cd pyradiomics-pipeline
+git clone https://github.com/SqL-2024/PyRadiomicsPipelineV2.git
+cd PyRadiomicsPipelineV2
 pip install -r requirements.txt
 
 ```

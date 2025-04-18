@@ -98,40 +98,4 @@ class RadiomicFeatureExtractor(object):
 
 
 if __name__ == '__main__':
-    data_dir = 'D:\Datasets/UltrasoundDrShi\pkl_files0315'
-    label_dict = {'pCR': 1, '非pCR': 0}
-    radiomic_feature_types = ['first_order', 'shape2d', 'glcm', 'glrlm', 'glszm', 'ngtdm', 'gldm']
-    image_filters = ['original', 'log_1', 'log_3', 'log_5', 'wavelet', 'square', 'gradient', 'lbp-3D']
-    all_features = []
-    case_ids = []
-    labels_name = []
-    labels = []
 
-    for name in os.listdir(data_dir):
-        case_feature = []
-        case_feature_name = []
-        if 'T0' in name:
-            with open(os.path.join(data_dir, name), 'rb') as f:
-                data = pickle.load(f)
-
-            image = np.mean(data['2d_image'], axis=2)
-            mask = data['2d_mask']
-            feature_value, feature_name = extract_process(image, mask, 10,
-                                                          radiomic_feature_types,
-                                                          image_filters)
-
-            case_feature.append(feature_value)
-            case_feature_name.append(feature_name)
-            all_features.append(np.hstack(case_feature))
-            case_ids.append(name.split('_')[0])
-            labels_name.append(data['label'])
-            labels.append(label_dict[data['label']])
-
-    all_features_name = np.hstack(case_feature_name)
-    all_case_features = np.stack(all_features)
-    feature_data = pd.DataFrame(all_case_features, columns=all_features_name)
-    feature_data.insert(0, 'case_ids', case_ids)
-    feature_data.insert(1, 'label', labels)
-    feature_data.insert(2, 'label_name', labels_name)
-    feature_data.to_excel(os.path.join('D:\Datasets/UltrasoundDrShi', 'radiomic_features_T0.xlsx'), index=False)
-    print('the number of feature extracted is:', feature_data.shape[1] - 2)
